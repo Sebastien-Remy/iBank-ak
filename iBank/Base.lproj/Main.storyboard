@@ -732,17 +732,17 @@
             <objects>
                 <viewController id="DZ4-ai-12l" customClass="SourceViewController" customModule="iBank" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="mFL-d6-M2O">
-                        <rect key="frame" x="0.0" y="0.0" width="439" height="222"/>
+                        <rect key="frame" x="0.0" y="0.0" width="439" height="54"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <scrollView autohidesScrollers="YES" horizontalLineScroll="24" horizontalPageScroll="10" verticalLineScroll="24" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="It8-VV-bKj">
-                                <rect key="frame" x="0.0" y="0.0" width="439" height="222"/>
+                                <rect key="frame" x="0.0" y="0.0" width="439" height="54"/>
                                 <clipView key="contentView" drawsBackground="NO" id="Xu4-Cx-7uB">
-                                    <rect key="frame" x="1" y="1" width="437" height="220"/>
+                                    <rect key="frame" x="1" y="1" width="437" height="52"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" multipleSelection="NO" autosaveColumns="NO" rowHeight="24" rowSizeStyle="systemDefault" headerView="2sL-CQ-B6u" viewBased="YES" indentationPerLevel="13" outlineTableColumn="fTq-mi-hz2" id="dNd-rt-ard">
-                                            <rect key="frame" x="0.0" y="0.0" width="437" height="192"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="437" height="24"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <size key="intercellSpacing" width="17" height="0.0"/>
                                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -902,7 +902,7 @@
                                     <nil key="backgroundColor"/>
                                 </clipView>
                                 <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="fDZ-uo-VXP">
-                                    <rect key="frame" x="1" y="102" width="437" height="16"/>
+                                    <rect key="frame" x="1" y="205" width="437" height="16"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="rVH-Sd-vbl">
@@ -916,10 +916,10 @@
                             </scrollView>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="It8-VV-bKj" firstAttribute="leading" secondItem="mFL-d6-M2O" secondAttribute="leading" id="7iN-Xc-dyl"/>
-                            <constraint firstItem="It8-VV-bKj" firstAttribute="top" secondItem="mFL-d6-M2O" secondAttribute="top" id="DRF-6D-jgG"/>
-                            <constraint firstAttribute="trailing" secondItem="It8-VV-bKj" secondAttribute="trailing" id="Dwn-xB-eIQ"/>
-                            <constraint firstAttribute="bottom" secondItem="It8-VV-bKj" secondAttribute="bottom" id="c3C-ga-MCG"/>
+                            <constraint firstItem="It8-VV-bKj" firstAttribute="height" secondItem="mFL-d6-M2O" secondAttribute="height" id="GGR-W5-XQD"/>
+                            <constraint firstItem="It8-VV-bKj" firstAttribute="width" secondItem="mFL-d6-M2O" secondAttribute="width" id="tJo-Sr-JYw"/>
+                            <constraint firstItem="It8-VV-bKj" firstAttribute="centerY" secondItem="mFL-d6-M2O" secondAttribute="centerY" id="xTB-P2-wxg"/>
+                            <constraint firstItem="It8-VV-bKj" firstAttribute="centerX" secondItem="mFL-d6-M2O" secondAttribute="centerX" id="zrV-PE-geF"/>
                         </constraints>
                     </view>
                     <connections>
