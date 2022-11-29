@@ -14,7 +14,7 @@ class SourceViewController: NSViewController {
     
     // MARK: Var
     private var viewModel = SourceViewModel()
-    private let contextMenu = NSMenu(title: "Context")
+    private let contextMenu = NSMenu(title: "")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -93,22 +93,46 @@ extension SourceViewController: NSOutlineViewDelegate {
                 cell.textField?.isEditable = true
                 cell.textField?.delegate = self
                 return cell
-                
             }
             
+            // Account
+            if let account = item as? Account {
+                cell.textField?.stringValue = account.accountName
+                cell.textField?.isEditable = true
+                cell.textField?.delegate = self
+                return cell
+            }
+            
+            // Category
             if let category = item as? Category {
                 cell.textField?.stringValue = category.categoryName
                 cell.textField?.isEditable = true
                 cell.textField?.delegate = self
                 return cell
-                
             }
-            // other
-                cell.textField?.stringValue = "CRASH other"
+            
+            // Third
+            if let third = item as? Third {
+                cell.textField?.stringValue = third.thirdName
+                cell.textField?.isEditable = true
+                cell.textField?.delegate = self
+                return cell
+            }
+            
+            // Project
+            if let project = item as? Project {
+                cell.textField?.stringValue = project.projectName
+                cell.textField?.isEditable = true
+                cell.textField?.delegate = self
+                return cell
+            }
+            
+            // other MAY NEVER HAPPEN -> CRASH APP ??
+                cell.textField?.stringValue = "invalid data"
                 return cell
             
         } else {
-            // previewCol
+            // Other Cols
             
             let cellIdentifier = NSUserInterfaceItemIdentifier("previewCell")
             guard let cell = outlineView.makeView(withIdentifier: cellIdentifier, owner: nil) as? NSTableCellView else { return nil }
@@ -123,13 +147,33 @@ extension SourceViewController: NSOutlineViewDelegate {
 extension SourceViewController: NSTextFieldDelegate {
     func control(_ control: NSControl, textShouldEndEditing fieldEditor: NSText) -> Bool {
          
+        // Account Group ?
         if let accountGroup = outlineView.item(atRow: outlineView.selectedRow) as? AccountGroup {
             accountGroup.accountGroupName = (control as! NSTextField).stringValue
             viewModel.save()
         }
         
+        // Account ?
+        if let account = outlineView.item(atRow: outlineView.selectedRow) as? Account {
+            account.accountName = (control as! NSTextField).stringValue
+            viewModel.save()
+        }
+        
+        // Category ?
         if let category = outlineView.item(atRow: outlineView.selectedRow) as? Category {
             category.categoryName = (control as! NSTextField).stringValue
+            viewModel.save()
+        }
+        
+        // Third ?
+        if let third = outlineView.item(atRow: outlineView.selectedRow) as? Third {
+            third.thirdName = (control as! NSTextField).stringValue
+            viewModel.save()
+        }
+        
+        // Project ?
+        if let project = outlineView.item(atRow: outlineView.selectedRow) as? Project {
+            project.projectName = (control as! NSTextField).stringValue
             viewModel.save()
         }
         
@@ -140,7 +184,6 @@ extension SourceViewController: NSTextFieldDelegate {
 // MARK: - NSMenuDelegate
 extension SourceViewController: NSMenuDelegate {
     
-
     func menuNeedsUpdate(_ menu: NSMenu) {
         
         let section = outlineView.item(atRow: outlineView.clickedRow) as? Section
@@ -174,15 +217,34 @@ extension SourceViewController: NSMenuDelegate {
             entity = .accountGroup
         }
         
+        // Account ?
+        if let item = outlineView.item(atRow: outlineView.clickedRow) as? Account {
+            viewModel.deleteAccount(item)
+            entity = .account
+        }
+        
         // Category ?
         if let item = outlineView.item(atRow: outlineView.clickedRow) as? Category {
             viewModel.deleteCategory(item)
             entity = .category
         }
         
+        // Third ?
+        if let item = outlineView.item(atRow: outlineView.clickedRow) as? Third {
+            viewModel.deleteThird(item)
+            entity = .third
+        }
+        
+        // Project ?
+        if let item = outlineView.item(atRow: outlineView.clickedRow) as? Project {
+            viewModel.deleteProject(item)
+            entity = .project
+        }
         
         // Refresh UI
         outlineView.reloadData()
+        
+        // Expand section of deleted item
         if let index = viewModel.sections.firstIndex(where: { $0.entity == entity }) {
             outlineView.expandItem(viewModel.sections[index])
         }
@@ -193,30 +255,52 @@ extension SourceViewController: NSMenuDelegate {
         var entity: SectionEntity?
         var newItem: Any?
         
-        let section = outlineView.item(atRow: outlineView.clickedRow) as? Section
+        guard let section = outlineView.item(atRow: outlineView.clickedRow) as? Section else { return }
         
-        if (section?.entity == .accountGroup) {
+        // Account Group ?
+        if (section.entity == .accountGroup) {
             newItem = viewModel.addAccountGroup()
             entity = .accountGroup
         }
         
-        if (section?.entity == .category) {
+        // Account ?
+        if (section.entity == .account) {
+            newItem = viewModel.addAccount()
+            entity = .accountGroup
+        }
+        
+        // Category
+        if (section.entity == .category) {
             newItem = viewModel.addCategory()
             entity = .category
         }
         
+        // Third ?
+        if (section.entity == .third) {
+            newItem = viewModel.addThird()
+            entity = .third
+        }
+        
+        // Project ?
+        if (section.entity == .project) {
+            newItem = viewModel.addProject()
+            entity = .project
+        }
+        
+        // Refresh UI
+        outlineView.reloadData()
+        
+        // Expand section of added item
         if let index = viewModel.sections.firstIndex(where: { $0.entity == entity }) {
             outlineView.expandItem(viewModel.sections[index])
         }
         
-        outlineView.reloadData()
-        
+        // Select added item
         let rowIndex = outlineView.row(forItem: newItem)
         if rowIndex > -1 {
             outlineView.selectRowIndexes(IndexSet(integer: rowIndex), byExtendingSelection: false)
         }
     }
-    
 }
 
 

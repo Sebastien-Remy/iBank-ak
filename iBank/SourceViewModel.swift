@@ -61,7 +61,32 @@ class SourceViewModel: NSObject {
         save()
     }
     
-    // MARK: - Categories
+    // MARK: - Account
+    func accounts() -> [Account] {
+        let request = Account.fetchRequest()
+        do {
+            let result = try context.fetch(request)
+            return result
+        } catch {
+            print ("ERROR in CoreData")
+            return []
+        }
+    }
+    
+    func addAccount() -> Account {
+        let newItem = Account(context: context)
+        newItem.name = "Account"
+        save()
+        return newItem
+    }
+    
+    func deleteAccount(_ item: Account) {
+        context.delete(item)
+        save()
+    }
+    
+    
+    // MARK: - Category
     
     func categories() -> [Category] {
         let request = Category.fetchRequest()
@@ -100,6 +125,18 @@ class SourceViewModel: NSObject {
         }
     }
     
+    func addThird() -> Third {
+        let newItem = Third(context: context)
+        newItem.name = "Third"
+        save()
+        return newItem
+    }
+    
+    func deleteThird(_ item: Third) {
+        context.delete(item)
+        save()
+    }
+    
     // MARK: - Projects
     func projects() -> [Project] {
         let request = Project.fetchRequest()
@@ -114,6 +151,17 @@ class SourceViewModel: NSObject {
         }
     }
     
+    func addProject() -> Project {
+        let newItem = Project(context: context)
+        newItem.name = "Project"
+        save()
+        return newItem
+    }
+    
+    func deleteProject(_ item: Project) {
+        context.delete(item)
+        save()
+    }
 }
 
 class Section {
@@ -128,5 +176,5 @@ class Section {
 }
 
 enum SectionEntity: Int {
-    case accountGroup, bank, category, third, project
+    case accountGroup, account, category, third, project
 }
