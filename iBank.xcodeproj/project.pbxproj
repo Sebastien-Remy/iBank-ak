@@ -8,20 +8,46 @@
 
 /* Begin PBXBuildFile section */
 		9656CE2F293201C500BAB39F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9656CE2E293201C500BAB39F /* AppDelegate.swift */; };
-		9656CE31293201C500BAB39F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9656CE30293201C500BAB39F /* ViewController.swift */; };
 		9656CE34293201C500BAB39F /* iBank.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9656CE32293201C500BAB39F /* iBank.xcdatamodeld */; };
 		9656CE36293201C700BAB39F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9656CE35293201C700BAB39F /* Assets.xcassets */; };
 		9656CE39293201C700BAB39F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9656CE37293201C700BAB39F /* Main.storyboard */; };
+		9656CE41293208B600BAB39F /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9656CE40293208B600BAB39F /* SplitViewController.swift */; };
+		9656CE43293208E000BAB39F /* SourceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9656CE42293208E000BAB39F /* SourceViewController.swift */; };
+		9656CE46293208EE00BAB39F /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9656CE44293208EE00BAB39F /* DetailViewController.swift */; };
+		9656CE4D2934B06C00BAB39F /* SourceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9656CE4C2934B06C00BAB39F /* SourceViewModel.swift */; };
+		9656CE562934C40100BAB39F /* TransactionStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9656CE502934C40100BAB39F /* TransactionStatus.swift */; };
+		9656CE572934C40100BAB39F /* Account-CoreDataHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9656CE512934C40100BAB39F /* Account-CoreDataHelpers.swift */; };
+		9656CE582934C40100BAB39F /* Third-CoreDataHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9656CE522934C40100BAB39F /* Third-CoreDataHelpers.swift */; };
+		9656CE592934C40100BAB39F /* Category-CoreDataHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9656CE532934C40100BAB39F /* Category-CoreDataHelpers.swift */; };
+		9656CE5A2934C40100BAB39F /* Project-CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9656CE542934C40100BAB39F /* Project-CoreDataHelper.swift */; };
+		9656CE5B2934C40100BAB39F /* Transaction-CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9656CE552934C40100BAB39F /* Transaction-CoreDataHelper.swift */; };
+		9656CE5F2934C41400BAB39F /* ColorFromHex-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9656CE5D2934C41400BAB39F /* ColorFromHex-Extension.swift */; };
+		9656CE602934C41400BAB39F /* ColorToHexString-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9656CE5E2934C41400BAB39F /* ColorToHexString-Extension.swift */; };
+		9656CE622934C43400BAB39F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9656CE612934C43400BAB39F /* Constants.swift */; };
+		9656CE672934CB6C00BAB39F /* AccountGroup-CoreDataHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9656CE662934CB6C00BAB39F /* AccountGroup-CoreDataHelpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		9656CE2B293201C500BAB39F /* iBank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iBank.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9656CE2E293201C500BAB39F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9656CE30293201C500BAB39F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9656CE33293201C500BAB39F /* iBank.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = iBank.xcdatamodel; sourceTree = "<group>"; };
 		9656CE35293201C700BAB39F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9656CE38293201C700BAB39F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9656CE3A293201C700BAB39F /* iBank.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iBank.entitlements; sourceTree = "<group>"; };
+		9656CE40293208B600BAB39F /* SplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitViewController.swift; sourceTree = "<group>"; };
+		9656CE42293208E000BAB39F /* SourceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceViewController.swift; sourceTree = "<group>"; };
+		9656CE44293208EE00BAB39F /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		9656CE4C2934B06C00BAB39F /* SourceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceViewModel.swift; sourceTree = "<group>"; };
+		9656CE502934C40100BAB39F /* TransactionStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionStatus.swift; sourceTree = "<group>"; };
+		9656CE512934C40100BAB39F /* Account-CoreDataHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Account-CoreDataHelpers.swift"; sourceTree = "<group>"; };
+		9656CE522934C40100BAB39F /* Third-CoreDataHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Third-CoreDataHelpers.swift"; sourceTree = "<group>"; };
+		9656CE532934C40100BAB39F /* Category-CoreDataHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Category-CoreDataHelpers.swift"; sourceTree = "<group>"; };
+		9656CE542934C40100BAB39F /* Project-CoreDataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Project-CoreDataHelper.swift"; sourceTree = "<group>"; };
+		9656CE552934C40100BAB39F /* Transaction-CoreDataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Transaction-CoreDataHelper.swift"; sourceTree = "<group>"; };
+		9656CE5D2934C41400BAB39F /* ColorFromHex-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ColorFromHex-Extension.swift"; sourceTree = "<group>"; };
+		9656CE5E2934C41400BAB39F /* ColorToHexString-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ColorToHexString-Extension.swift"; sourceTree = "<group>"; };
+		9656CE612934C43400BAB39F /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		9656CE662934CB6C00BAB39F /* AccountGroup-CoreDataHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AccountGroup-CoreDataHelpers.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +80,43 @@
 		9656CE2D293201C500BAB39F /* iBank */ = {
 			isa = PBXGroup;
 			children = (
+				9656CE632934C44900BAB39F /* Core Data Helper */,
+				9656CE502934C40100BAB39F /* TransactionStatus.swift */,
 				9656CE2E293201C500BAB39F /* AppDelegate.swift */,
-				9656CE30293201C500BAB39F /* ViewController.swift */,
-				9656CE35293201C700BAB39F /* Assets.xcassets */,
+				9656CE40293208B600BAB39F /* SplitViewController.swift */,
+				9656CE42293208E000BAB39F /* SourceViewController.swift */,
+				9656CE4C2934B06C00BAB39F /* SourceViewModel.swift */,
+				9656CE44293208EE00BAB39F /* DetailViewController.swift */,
 				9656CE37293201C700BAB39F /* Main.storyboard */,
-				9656CE3A293201C700BAB39F /* iBank.entitlements */,
+				9656CE5C2934C41400BAB39F /* Extension */,
 				9656CE32293201C500BAB39F /* iBank.xcdatamodeld */,
+				9656CE612934C43400BAB39F /* Constants.swift */,
+				9656CE35293201C700BAB39F /* Assets.xcassets */,
+				9656CE3A293201C700BAB39F /* iBank.entitlements */,
 			);
 			path = iBank;
+			sourceTree = "<group>";
+		};
+		9656CE5C2934C41400BAB39F /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				9656CE5D2934C41400BAB39F /* ColorFromHex-Extension.swift */,
+				9656CE5E2934C41400BAB39F /* ColorToHexString-Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		9656CE632934C44900BAB39F /* Core Data Helper */ = {
+			isa = PBXGroup;
+			children = (
+				9656CE662934CB6C00BAB39F /* AccountGroup-CoreDataHelpers.swift */,
+				9656CE512934C40100BAB39F /* Account-CoreDataHelpers.swift */,
+				9656CE532934C40100BAB39F /* Category-CoreDataHelpers.swift */,
+				9656CE542934C40100BAB39F /* Project-CoreDataHelper.swift */,
+				9656CE522934C40100BAB39F /* Third-CoreDataHelpers.swift */,
+				9656CE552934C40100BAB39F /* Transaction-CoreDataHelper.swift */,
+			);
+			path = "Core Data Helper";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -134,9 +189,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9656CE43293208E000BAB39F /* SourceViewController.swift in Sources */,
+				9656CE672934CB6C00BAB39F /* AccountGroup-CoreDataHelpers.swift in Sources */,
+				9656CE622934C43400BAB39F /* Constants.swift in Sources */,
+				9656CE592934C40100BAB39F /* Category-CoreDataHelpers.swift in Sources */,
 				9656CE34293201C500BAB39F /* iBank.xcdatamodeld in Sources */,
-				9656CE31293201C500BAB39F /* ViewController.swift in Sources */,
+				9656CE46293208EE00BAB39F /* DetailViewController.swift in Sources */,
 				9656CE2F293201C500BAB39F /* AppDelegate.swift in Sources */,
+				9656CE602934C41400BAB39F /* ColorToHexString-Extension.swift in Sources */,
+				9656CE582934C40100BAB39F /* Third-CoreDataHelpers.swift in Sources */,
+				9656CE4D2934B06C00BAB39F /* SourceViewModel.swift in Sources */,
+				9656CE5B2934C40100BAB39F /* Transaction-CoreDataHelper.swift in Sources */,
+				9656CE572934C40100BAB39F /* Account-CoreDataHelpers.swift in Sources */,
+				9656CE5F2934C41400BAB39F /* ColorFromHex-Extension.swift in Sources */,
+				9656CE41293208B600BAB39F /* SplitViewController.swift in Sources */,
+				9656CE562934C40100BAB39F /* TransactionStatus.swift in Sources */,
+				9656CE5A2934C40100BAB39F /* Project-CoreDataHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,7 +354,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = fr.monkeydev.iBank;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -314,7 +382,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = fr.monkeydev.iBank;
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -1,4 +1,60 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="true" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21512" systemVersion="22A400" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Account" representedClassName="Account" syncable="YES" codeGenerationType="class">
+        <attribute name="colorAsHex" optional="YES" attributeType="String" valueTransformerName="ColorTransformer" customClassName="NSColor"/>
+        <attribute name="iconName" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String" minValueString="0" maxValueString="256"/>
+        <attribute name="notes" optional="YES" attributeType="String" minValueString="0" maxValueString="1024"/>
+        <attribute name="originalBalance" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <relationship name="accountGroup" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="AccountGroup" inverseName="account" inverseEntity="AccountGroup"/>
+        <relationship name="bankStatements" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="BankStatement" inverseName="account" inverseEntity="BankStatement"/>
+        <relationship name="transactions" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Transaction" inverseName="account" inverseEntity="Transaction"/>
+    </entity>
+    <entity name="AccountGroup" representedClassName="AccountGroup" syncable="YES" codeGenerationType="class">
+        <attribute name="colorAsHex" optional="YES" attributeType="String" valueTransformerName="ColorTransformer" customClassName="NSColor"/>
+        <attribute name="iconName" optional="YES" attributeType="String"/>
+        <attribute name="name" attributeType="String" minValueString="0" maxValueString="256" defaultValueString=""/>
+        <attribute name="notes" attributeType="String" defaultValueString=""/>
+        <relationship name="account" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Account" inverseName="accountGroup" inverseEntity="Account"/>
+    </entity>
+    <entity name="BankStatement" representedClassName="BankStatement" syncable="YES" codeGenerationType="class">
+        <attribute name="name" attributeType="String" minValueString="0" maxValueString="128" defaultValueString=""/>
+        <attribute name="notes" optional="YES" attributeType="String" minValueString="0" maxValueString="1024"/>
+        <relationship name="account" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Account" inverseName="bankStatements" inverseEntity="Account"/>
+    </entity>
+    <entity name="Category" representedClassName="Category" syncable="YES" codeGenerationType="class">
+        <attribute name="colorAsHex" optional="YES" attributeType="String" valueTransformerName="ColorTransformer" customClassName="NSColor"/>
+        <attribute name="iconName" optional="YES" attributeType="String"/>
+        <attribute name="name" attributeType="String" minValueString="0" maxValueString="256" defaultValueString=""/>
+        <attribute name="notes" optional="YES" attributeType="String" minValueString="0" maxValueString="1024"/>
+        <relationship name="transactions" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Transaction" inverseName="category" inverseEntity="Transaction"/>
+    </entity>
+    <entity name="Project" representedClassName="Project" syncable="YES" codeGenerationType="class">
+        <attribute name="colorAsHex" optional="YES" attributeType="String" valueTransformerName="ColorTransformer" customClassName="NSColor"/>
+        <attribute name="iconName" optional="YES" attributeType="String"/>
+        <attribute name="name" attributeType="String" minValueString="0" maxValueString="256" defaultValueString=""/>
+        <attribute name="notes" optional="YES" attributeType="String" minValueString="0" maxValueString="1024"/>
+        <relationship name="transactions" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Transaction" inverseName="project" inverseEntity="Transaction"/>
+    </entity>
+    <entity name="Third" representedClassName="Third" syncable="YES" codeGenerationType="class">
+        <attribute name="colorAsHex" optional="YES" attributeType="String" valueTransformerName="ColorTransformer" customClassName="NSColor"/>
+        <attribute name="iconName" optional="YES" attributeType="String"/>
+        <attribute name="name" attributeType="String" minValueString="0" maxValueString="256" defaultValueString=""/>
+        <attribute name="notes" optional="YES" attributeType="String" minValueString="0" maxValueString="1024"/>
+        <relationship name="transactions" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Transaction" inverseName="third" inverseEntity="Transaction"/>
+    </entity>
+    <entity name="Transaction" representedClassName="Transaction" syncable="YES" codeGenerationType="class">
+        <attribute name="amount" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="checkedDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="groupId" optional="YES" attributeType="String"/>
+        <attribute name="notes" optional="YES" attributeType="String" minValueString="0" maxValueString="1024"/>
+        <attribute name="status" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="subtitle" optional="YES" attributeType="String" minValueString="0" maxValueString="256"/>
+        <attribute name="title" attributeType="String" minValueString="0" maxValueString="256" defaultValueString=""/>
+        <relationship name="account" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Account" inverseName="transactions" inverseEntity="Account"/>
+        <relationship name="category" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Category" inverseName="transactions" inverseEntity="Category"/>
+        <relationship name="project" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Project" inverseName="transactions" inverseEntity="Project"/>
+        <relationship name="third" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Third" inverseName="transactions" inverseEntity="Third"/>
+    </entity>
 </model>
