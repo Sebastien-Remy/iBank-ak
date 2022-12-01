@@ -69,6 +69,7 @@ extension SourceViewController: NSOutlineViewDataSource {
 
 // MARK: - NSOutlineViewDelegate
 extension SourceViewController: NSOutlineViewDelegate {
+    
     func outlineView(_ outlineView: NSOutlineView,
                      viewFor tableColumn: NSTableColumn?,
                      item: Any) -> NSView? {
@@ -141,6 +142,16 @@ extension SourceViewController: NSOutlineViewDelegate {
             return cell
         }
     }
+    
+    // Selection is changing
+    //
+    func outlineViewSelectionIsChanging(_ notification: Notification) {
+                
+        // Send notification
+        NotificationCenter.default.post(name: Constants.Notification.viewSelectionChanged,
+                                        object: outlineView.item(atRow: outlineView.selectedRow))
+    }
+    
 }
 
 // MARK: - NSTextFieldDelegate
@@ -185,9 +196,7 @@ extension SourceViewController: NSTextFieldDelegate {
 extension SourceViewController: NSMenuDelegate {
     
     func menuNeedsUpdate(_ menu: NSMenu) {
-        
         let section = outlineView.item(atRow: outlineView.clickedRow) as? Section
-        let accountGroup = outlineView.item(atRow: outlineView.clickedRow) as? AccountGroup
         
         // Clear Menu
         menu.removeAllItems()

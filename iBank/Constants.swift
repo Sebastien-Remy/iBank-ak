@@ -8,6 +8,9 @@
 import Foundation
 
 struct Constants {
+    struct Notification {
+        static let viewSelectionChanged = NSNotification.Name(rawValue: "fr.ibank.viewSelectionChanged")
+    }
     struct Account {
         static let iconName = "building.columns"
     }
